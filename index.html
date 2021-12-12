@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>      
+<head>
+	<title>Sign Up</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+		li {list-style-type: none;
+			margin-top: 25px;
+		}
+		textarea {resize: none;}
+		input {border: none;
+			border-bottom: 2px solid black;
+		}
+		.error {font-size: 12px;
+			color: red;
+			
+			
+		}
+		textarea {padding: 5px;
+			color: grey;
+			font-style: italic;
+		}
+		fieldset {display: inline-block;}
+		.f {position: relative;
+			left: 30%;
+			bottom: 373px;
+		}
+		header {background-image: url('img/parcel.jpg');
+		height: 100px;
+	}
+	h1 {
+		color: brown;
+	}
+	</style>
+	<script type="text/javascript">
+		function thankyou() {
+		let f = document.forms["form"]["fname"].value;
+		let e = document.forms["form"]["email"].value;
+		var mailFormat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+ 		if (f == "" || f == null || e == "" || e == null){
+ 		document.getElementById("nerror").innerHTML = "You have to provide your full name and email address";
+ 		return false;
+ 		}
+ 		if (e.match(mailFormat)){
+ 		return true;
+ 		}
+ 		else {
+ 			document.getElementById("eerror").innerHTML = "The provided email is invalid"
+ 			return false;
+ 		}
+ 	}
+	</script>
+</head>
+<header>
+		<h1>Tob's Delivery</h1>
+	</header>
+<body>
+	<br><br>
+	<form action="./thankyou.html" method="POST" onsubmit="return thankyou()" name="form">
+		<fieldset>
+			<legend>Become A Delivery Man</legend>
+			<p>SIGN UP</p>
+			<ol>
+				<li><label for="first">Name:</label>
+					<input type="text" name="fname" id="first" placeholder="Name" maxlength="20"><br><p id="nerror" class="error"></p>
+				</li>
+				<br>
+				<li>
+					<label for="email">E-mail:</label>
+					<input type="text" name="email" id="email" placeholder="email" maxlength="25"><br><p class="error" id="eerror"></p>
+				</li>
+				<li>
+					<textarea rows="4" cols="20">Tell us more about you </textarea>
+				</li>
+				<li>
+					Menu:
+					<select name="location">
+						<option>Lagos</option>
+						<option>Ogun</option>
+						<option>Osun</option>
+					</select>
+				</li>
+			</ol>
+			<input type="submit" value="SUBMIT">
+
+		</fieldset>																																						    </form>
+
+		<fieldset class="f">
+			<legend>Our Services</legend>
+			<p>We offer the following services</p>
+			<ul>
+				<li>Parcel Delivery</li>
+				<li>Mail Delivery</li>
+				<li>Food Delivery</li>
+				<li>And Many More...</li>
+			</ul>
+		</fieldset>
+</body>
+</html>
